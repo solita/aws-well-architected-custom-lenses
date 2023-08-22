@@ -82,6 +82,13 @@
                             "improvementPlan": {
                                 "displayText": "Use a package manager to deploy your containerized application"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -123,6 +130,13 @@
                             "improvementPlan": {
                                 "displayText": "Have your logs available outside the running container"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -160,6 +174,13 @@
                             "improvementPlan": {
                                 "displayText": "Use the USER directive to limit privileges"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -187,6 +208,13 @@
                             "improvementPlan": {
                                 "displayText": "Limit administrator access to build infrastructure (CI pipeline)"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -213,6 +241,13 @@
                             },
                             "improvementPlan": {
                                 "displayText": "Ensure that your images are scanned for vulnerabilities"
+                            }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
                             }
                         }
                     ],
@@ -251,6 +286,13 @@
                             "improvementPlan": {
                                 "displayText": "Understand the lineage of your container image"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -288,6 +330,13 @@
                             "improvementPlan": {
                                 "displayText": "Ensure that persistent data is stored outside of the container"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -321,6 +370,13 @@
                             "improvementPlan": {
                                 "displayText": "Use RAM and CPU limits"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -348,6 +404,13 @@
                             "improvementPlan": {
                                 "displayText": "Use volumes to persist data"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -370,7 +433,7 @@
                             "id": "choice1",
                             "title": "Create local testing processes",
                             "helpfulResource": {
-                                "displayText": "In the context of container workloads, infrastructure protection is often a topic with respect to the container as a vector to access the underlying compute infrastructure. In any security context, reducing attack surface is top of mind. This can be accomplished when designing and building your container in a variety of ways:\n\n- Run distroless images without a shell or a package manager to ensure that bad actors cannot make changes to the image or easily download software packages to aid in their attack.\n- Build open-source libraries from source or scan libraries for vulnerabilities to ensure awareness of all of the components of the container image.\n- Remove or defang setuid and setgid bits from the container image to make sure that these permissions are not used in privilege escalation attacks.\n- Lint your Dockerfile to help identify violations of best practices for building container images.\n- Use a tool such as docker-slim to analyze existing images and remove unnecessary binaries not required by the application.\n- Ensure that your container is designed to operate with a read-only root filesystem. This functionality is normally defined at runtime but it is important to consider this facet when designing the container itself."
+                                "displayText": "When building a containerized application, you want to be able to test your application as early as possible. That means that you have to think about how developers will be able to test their containerized application locally.\n\nFirst you will have to decide whether the container build for local testing will run on the developer’s machine or in a remote machine, because this will have an impact on the tooling that developers use on their machines.\n\nSecond, you will have to provide a local deployment mechanism. For this, you can use single containers that run as part of an automation script or deploy the containers locally using a local version of your target orchestrator. This can be also part of the testing section of your local build-script. With this approach, you can deploy necessary infrastructure components like databases in a lightweight fashion in order to test your application with the real infrastructure instead of mocked APIs.\n\nOne example might be a Docker Compose manifest to deploy multiple containers in a single command. For Kubernetes, use minikube to deploy the containerized application and all of its objects (such as Deployment, ConfigMaps, and Secrets)."
                             },
                             "improvementPlan": {
                                 "displayText": "Create local testing processes"
@@ -384,6 +447,13 @@
                             },
                             "improvementPlan": {
                                 "displayText": "Design your testing environments to support your container build pipeline"
+                            }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
                             }
                         }
                     ],
@@ -436,6 +506,13 @@
                             "improvementPlan": {
                                 "displayText": "Use source control and tagging on all container images"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -462,6 +539,13 @@
                             },
                             "improvementPlan": {
                                 "displayText": "Plan for health checks in all containers builds and deployments"
+                            }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
                             }
                         }
                     ],
@@ -516,6 +600,13 @@
                             "improvementPlan": {
                                 "displayText": "Exclude files with from your build process"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -547,6 +638,13 @@
                             "improvementPlan": {
                                 "displayText": "Use a container registry close to your cluster"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -573,6 +671,13 @@
                             },
                             "improvementPlan": {
                                 "displayText": "Don't use the latest tag for your parent image"
+                            }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
                             }
                         }
                     ],
@@ -601,6 +706,13 @@
                             "improvementPlan": {
                                 "displayText": "Implement a notification mechanism for updated parent images"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -627,6 +739,13 @@
                             },
                             "improvementPlan": {
                                 "displayText": "Implement an automated performance testing strategy"
+                            }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
                             }
                         }
                     ],
@@ -665,6 +784,13 @@
                             "improvementPlan": {
                                 "displayText": "Use the CPU architecture with best price to performance ratio"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -697,6 +823,13 @@
                             },
                             "improvementPlan": {
                                 "displayText": "Don't keep unnecessary container images"
+                            }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
                             }
                         }
                     ],
@@ -745,6 +878,13 @@
                             "improvementPlan": {
                                 "displayText": "Preinstall common container image dependencies in parent image"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -782,6 +922,13 @@
                             "improvementPlan": {
                                 "displayText": "Keep your container size as small as possible for smaller storage requirements"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -808,6 +955,13 @@
                             },
                             "improvementPlan": {
                                 "displayText": "Reduce the count of layers in your container image"
+                            }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
                             }
                         }
                     ],
@@ -836,6 +990,13 @@
                             "improvementPlan": {
                                 "displayText": "Handle system signals and react according to the application logic"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -862,6 +1023,13 @@
                             },
                             "improvementPlan": {
                                 "displayText": "Support multiple CPU architectures"
+                            }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
                             }
                         }
                     ],
@@ -890,6 +1058,13 @@
                             "improvementPlan": {
                                 "displayText": "Shorten startup times for containerized applications"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -916,6 +1091,13 @@
                             },
                             "improvementPlan": {
                                 "displayText": "Use a build and pipeline service"
+                            }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
                             }
                         }
                     ],
@@ -950,6 +1132,13 @@
                             "improvementPlan": {
                                 "displayText": "Remove unnecessary dependencies"
                             }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
+                            }
                         }
                     ],
                     "riskRules": [
@@ -976,6 +1165,13 @@
                             },
                             "improvementPlan": {
                                 "displayText": "Use instance types with the least environmental impact"
+                            }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
                             }
                         }
                     ],
@@ -1033,6 +1229,13 @@
                             },
                             "improvementPlan": {
                                 "displayText": "Delete unused or obsolete container images"
+                            }
+                        },
+                        {
+                            "id": "choice_no",
+                            "title": "None of these",
+                            "helpfulResource": {
+                                "displayText": "Choose this if your workload does not follow these best practices."
                             }
                         }
                     ],
