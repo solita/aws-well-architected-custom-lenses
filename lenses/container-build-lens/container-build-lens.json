@@ -1,7 +1,7 @@
 {
     "schemaVersion": "2021-11-01",
     "name": "Container build lens",
-    "description": "Best practices and strategies to use when designing container images.",
+    "description": "Best practices and strategies to use when designing container images. This lens was created by Solita (https://www.solita.fi/en/) and maintained in https://github.com/solita/aws-well-architected-custom-lenses/.",
     "pillars": [
         {
             "id": "OPS",
